@@ -58,11 +58,11 @@
 
 (setq org-capture-templates
       '(("t" "Tasks" entry
-	 (file+headline "" "Inbox")
+	 (file+headline "~/Dropbox/SecondCritique/org/todo.org" "Tasks")
 	 "* TODO %?\n %U")
 	("m" "Meeting" entry
-	 (file+headline "" "Meetings")
+	 (file+headline "~/Dropbox/SecondCritique/org/meetings.org" "Meetings")
 	 "* %?\n %U")
 	("j" "Journal Entry" entry
-	 (file+datetree "journal.org")
+	 (file+datetree "~/Dropbox/SecondCritique/org/journal.org")
 	 "* %U\n%?")))
