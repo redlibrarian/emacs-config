@@ -6,7 +6,7 @@
  '(custom-safe-themes
    '("b1791a921c4f38cb966c6f78633364ad880ad9cf36eef01c60982c54ec9dd088" "296dcaeb2582e7f759e813407ff1facfd979faa071cf27ef54100202c45ae7d4" "36c5acdaf85dda0dad1dd3ad643aacd478fb967960ee1f83981d160c52b3c8ac" "cd5f8f91cc2560c017cc9ec24a9ab637451e36afd22e00a03e08d7b1b87c29ca" "b41d0a9413fb0034cea34eb8c9f89f6e243bdd76bccecf8292eb1fefa42eaf0a" "71b688e7ef7c844512fa7c4de7e99e623de99a2a8b3ac3df4d02f2cd2c3215e7" default))
  '(org-agenda-files nil)
- '(package-selected-packages '(slime ef-themes markdown-mode)))
+ '(package-selected-packages '(auctex slime ef-themes markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -14,7 +14,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Ubuntu" :foundry "DAMA" :slant normal :weight regular :height 120 :width normal)))))
 (add-to-list 'load-path "~/.emacs.d/manual-packages/ef-themes")
-(load-theme 'ef-tritanopia-light t)
+(load-theme 'ef-frost t)
 (setq org-agenda-files '("~/SecondCritique/org"))
 (setq org-startup-indented t)
 
@@ -52,11 +52,24 @@
 
 (setq org-capture-templates
       '(("t" "Tasks" entry
-	 (file+headline "~/SecondCritique/org/todo.org" "Tasks")
-	 "* TODO %?\n %U")
+	 (file+headline "~/SecondCritique/org/inbox.org" "Tasks")
+	 "* TODO %?\n %U" :empty-lines-before 0)
+	("e" "Eschaton" entry
+	 (file+headline "~/SecondCritique/org/eschaton.org" "Eschaton")
+	 "* %i%?\n %U")
+	("w" "Waiting" entry
+	  (file+headline "~/SecondCritique/org/immanent.org" "Waiting")
+	   "* %?\n %U")
 	("m" "Meeting" entry
 	 (file+headline "~/SecondCritique/org/work/meetings.org" "Meetings")
 	 "* %?\n %U")
 	("j" "Journal Entry" entry
 	 (file+datetree "~/SecondCritique/org/journal.org")
 	 "* %U\n%?")))
+(setq org-refile-targets '(("~/SecondCritique/org/immanent.org" :level . 1)
+			  ("~/SecondCritique/org/eschaton.org" :level . 1)
+			  ("~/SecondCritique/org/main.org" :level . 1)))
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq dired-listing-switches "-agho --group-directories-first")
+(local-set-key [3 99] 'org-capture)
