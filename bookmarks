@@ -1,0 +1,23 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-capture-last-stored-marker"
+ (filename . "~/SecondCritique/org/main.org")
+ (front-context-string . "**** TODO AESES ")
+ (rear-context-string . "25-06-24 15:00>\n")
+ (position . 530)
+ (last-modified 26713 29063 829470 0))
+("org-refile-last-stored"
+ (filename . "~/SecondCritique/org/main.org")
+ (front-context-string . "**** TODO AESES ")
+ (rear-context-string . "25-06-24 15:00>\n")
+ (position . 530)
+ (last-modified 26713 29063 828626 0))
+("org-capture-last-stored"
+ (filename . "~/SecondCritique/org/main.org")
+ (front-context-string . "** Term libraria")
+ (rear-context-string . "25-08-18 10:00>\n")
+ (position . 6338)
+ (last-modified 26786 2612 623610 0))
+)
